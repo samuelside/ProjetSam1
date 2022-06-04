@@ -72,7 +72,7 @@ class CEV2Controller extends Controller
         
         // (C) OUTPUT QR CODE
         // (C1) SAVE TO FILE
-        $result->saveToFile('C:\laragon\www\ProjetSam\public'. "/qr1.png");
+        $result->saveToFile(__DIR__ ."/qr1.png");
         
         // (C2) DIRECT OUTPUT
         //header("Content-Type: " . $result->getMimeType());

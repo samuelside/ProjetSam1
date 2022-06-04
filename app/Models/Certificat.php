@@ -11,6 +11,7 @@ class Certificat extends Model
 
     protected $fillable = [
         'NomDeAC',
+        'idCertif',
         'NumDeSerie',
         'DuréeValidate',
         'ParametreClée',

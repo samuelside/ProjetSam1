@@ -20,6 +20,7 @@ class CertificatController extends Controller
     public function Ajouter_un_certificat(Request  $request){
         $validated=$request->validate([
             'NomDeAC'=>"bail | required | max:35",
+            'idCertif'=>"bail |required| number | max:10",
             'NumDeSerie' => "bail | required |  max:1000",
             'DuréeValidate' => "bail | required | max:35",
             'ParametreClée' => "bail |required| number |max:5",

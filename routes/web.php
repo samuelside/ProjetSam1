@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CEVController;
+use App\Http\Controllers\ParticipantController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,9 +31,10 @@ Route::get('/Connect', function () {
     return view('Connexion');
 })->name('Connexion');
 
-Route::get('/Espace', function () {
+Route::get('/spacePart', function () {
     return view('EspaceParticipant');
-});
+})->name('dashboard.Part');
+
 
 Route::get('/Bar', function () {
     return view('Barre');
@@ -43,3 +45,6 @@ Route::post('/for', [CEVController::class, 'store'])->name('post.store');
 
 Route::get('/for.Cert', [CertificatController::class, 'Afficher_Annuaire'])->name('post.Afficher_Annuaire');
 Route::post('/for.Cert', [CertificatController::class, 'Ajouter_un_certificat'])->name('post.Ajouter_un_certificat');
+Route::post('/verification', [ParticipantController::class, 'Authentification_Participant'])->name('post.AuthPart');
+
+

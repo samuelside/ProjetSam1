@@ -47,7 +47,7 @@
   </li>
 
   <li class="nav-item pe-4">
-  <a class=" btn btn-primary  rounded-0" href="{{route('Connexion')}}" role="button">Se deconnecter  </a>
+  <a class=" btn btn-primary  rounded-0" href="{{}}" role="button">Se deconnecter  </a>
   </li>
 
 

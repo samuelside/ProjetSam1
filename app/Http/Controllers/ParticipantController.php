@@ -15,19 +15,19 @@ class ParticipantController extends Controller
         return view ('EspaceParticipant');
     }
 
-    public function Authentification_Utilisateur(Request $request ){
+    public function Authentification_Participant(Request $request ){
         //Validation des données entrantes.
         $validate_data=Validator::make($request->all(),[
             'emailParticipant'=> "bail | required | email| max:35",
             'passwordParticipant'=>"bail | required | min:6 | max:20",
 
         ]);
-
-        //Authentification_des_utilisateurs
+        
+        //Authentification_des_Participants
         if(Auth::guard('participant')->attempt(['EmailParticipant'=>$request->input('emailParticipant'), 'PasswordParticipant'=>$request->input('passwordParticipant') ])){
 
             $request->session()->regenerate();
-            return redirect()->intended('');
+            return redirect()->intended('/spacePart');
         }
         return back()->withErrors([
             'emailParticipant'=>"Votre email est incorrect",
@@ -36,23 +36,5 @@ class ParticipantController extends Controller
 
         }
 
-     public function Ajouter_un_Certificat(){
-
-
-     }  
      
-     public function Supprimer_un_Certificat(){
-
-
-     }
-
-     public function Envoyer_un_mail(){
-
-
-     }
-
-     public function Mettre_la_clé_publique(){
-
-        
-     }
 }

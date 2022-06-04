@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Participant;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,6 +14,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        Participant::create([
+            'emailParticipant'=>'samuel@gmail.com',
+            'passwordParticipant'=>bcrypt('123azerty')
+        
+        ]);
     }
 }

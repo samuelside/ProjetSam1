@@ -17,6 +17,7 @@ class CreateCertificatsTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('NomDeAC');
+            $table->integer('idCertif');
             $table->string('NumDeSerie');
             $table->string('DuréeValidate');
             $table->integer('ParamatreClé');

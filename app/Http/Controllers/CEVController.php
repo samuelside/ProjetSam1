@@ -7,6 +7,7 @@ use App\Models\CEV;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use Codedge\Fpdf\Fpdf\Fpdf;
 use Illuminate\Support\Facades\Storage;
+use setasign\Fpdi\Fpdi;
 
 class CEVController extends Controller
 
@@ -43,8 +44,9 @@ $validated=$request->validate([
 
 ]);
 
-//Storage::disk('public')->put('2D-doc',$request->file('Document'));
-
+Storage::disk('public')->putFileAs('2D-doc',$request->file('Document'),'side.pdf');
+$filePdf=fopen(Storage::disk('public')->path('2D-doc/side.pdf'), 'r');
+$filePdf1=fread($filePdf,filesize(Storage::disk('public')->path('2D-doc/side.pdf')));
 
 $Mon_CEV= new CEV;
 $Mon_CEV->NomOrga = $request->NomOrga;
@@ -109,19 +111,24 @@ $data = json_decode($Mon_CEV, true);
                 
                 ->generate($Entete . $h . "<US>" . $voir);
                 //return view ('2D-doc', compact('qrcode'));
-            
+           
             //->format("png")
-            //->saveToFile(__DIR__ . "/qr.png")
-        $this->fpdf = new Fpdf;
-        $this->fpdf->AddPage("L", ['100', '100']);
-        $this->fpdf->SetFont('Arial','B',14);
-        $this->fpdf->Text(10, 10, "Hello FPDF", 'qrcode');
-        $this->fpdf->Image('qr.png',10,10,-300);       
+        $var='J';    //->saveToFile(__DIR__ . "/qr.png")
+        $fpdi = new Fpdi();
+        $fpdi->AddPage();
+        $fpdi->setSourceFile(Storage::disk('public')->path('2D-doc/side.pdf'));
+        $file4=$fpdi->importPage(1);
+        $fpdi->useTemplate($file4,0,0);
+
+        $fpdi->SetFont('Arial','B',14);
+        $fpdi->Image('qr.png',170,260,25);       
         
-        $this->fpdf->Output();
+        $fpdi->Output();
         exit;
            
-            
+           
+          
+           
         
     }
 

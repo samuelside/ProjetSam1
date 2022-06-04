@@ -59,6 +59,7 @@
  </ul>
 
 </nav>
+
     
 
 </br>
@@ -67,15 +68,22 @@
 </br>
 
 
-<form>
+<form action="{{ route('post.AuthPart') }}" method='post'>
+  @csrf
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
-    <input type="Email" class="form-control" id="Email"  name='EmailParticipant' aria-describedby="emailHelp" placeholder="Enter email">
+    <input type="Email" class="form-control" id="emailParticipant"  name='emailParticipant' aria-describedby="emailHelp" placeholder="Enter email">
     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    {{-- @if ($errors->has('emailParticipant'))
+        <span>{{ $errors->get('emailParticipant') }}</span>
+    @endif --}}
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Password</label>
-    <input type="Password" class="form-control" id="Password" name='PasswordParticipant' placeholder="Password">
+    <input type="Password" class="form-control" id="passwordParticipant" name='passwordParticipant' placeholder="Password">
+    {{-- @if ($errors->has('passwordParticipant'))
+        <span>{{ $errors->get('passwordParticipant') }}</span>
+    @endif --}}
   </div>
   <div class="form-check">
     <input type="checkbox" class="form-check-input" id="exampleCheck1">
