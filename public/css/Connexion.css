@@ -1,33 +1,59 @@
-form{
-
-width: 35%;
-text-align: 100px;
-display: block;
+*{
+  padding: 0px;
+  margin: 0px;
 }
 
-.form-control{
-
-    width: 35%
+html{
+  height: 100%;
 }
 
 body{
-
-    background-color:#e9ecef !important;
-
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-.cc-navbar{
-
-background-color: rgba(255,255,255,1);
+form {
+  text-align: 100px;
+  display: block;
+  margin: auto;
+  width: 400px;
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
 }
 
-.btn-primary{
+form > h1{
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  font-weight: bolder;
+}
 
-  color:darkorange;
-  border-color: darkorange; 
+.formulaire {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+/* .form-control {
+  width: % !important;
+} */
+
+body {
+  background-color: #e9ecef !important;
+}
+
+.cc-navbar {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+#boutonSoumettre{
+  color: white;
+  background-color: darkorange ;
   transition: 0.5s;
+  display: block;
+  margin: auto ;
+  margin-top: 20px ;
 }
-
-
-    
-
