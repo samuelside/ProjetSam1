@@ -1,11 +1,21 @@
 form {
-    width: 35%;
+    min-width: 460px;
+    width: 50%;
     text-align: 100px;
     display: block;
+    margin: 20px auto;
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
 }
 
-.form-control {
-    width: 35%;
+.form-group{
+    margin: 15px auto;
+}
+
+.form-title{
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 body {
@@ -13,11 +23,24 @@ body {
 }
 
 .cc-navbar {
-    background-color: rgba(255, 255, 255, 1);
+    background-color: rgb(255, 255, 255, 1);
+}
+
+.c-nav-link {
+    display: block;
+    padding: .5rem 1rem;
+    color: rgba(45, 85, 255, 1);
+    text-decoration: none;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out
 }
 
 .btn-primary {
-    color: darkorange;
-    border-color: darkorange;
+    color: rgba(45, 85, 255, 1);
+    border-color: rgba(45, 85, 255, 1);
     transition: 0.5s;
+}
+
+#valider{
+    display: block;
+    margin-left: auto;
 }
