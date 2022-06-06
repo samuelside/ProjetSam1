@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\CEV;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
-use Codedge\Fpdf\Fpdf\Fpdf;
 use Illuminate\Support\Facades\Storage;
 use setasign\Fpdi\Fpdi;
 
